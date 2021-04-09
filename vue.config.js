@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
 const GitRevisionPlugin = require('git-revision-webpack-plugin')
 const GitRevision = new GitRevisionPlugin()
 const buildDate = JSON.stringify(new Date().toLocaleString())
@@ -51,7 +52,19 @@ const vueConfig = {
       })
     ],
     // if prod, add externals
-    externals: isProd ? assetsCDN.externals : {}
+    externals: isProd ? assetsCDN.externals : {},
+    optimization: isProd ? {
+      minimizer: [
+        new TerserPlugin({
+          sourceMap: false,
+          terserOptions: {
+            compress: {
+              drop_console: true
+            }
+          }
+        })
+      ]
+    } : {}
   },
 
   chainWebpack: (config) => {

@@ -4,6 +4,7 @@ import storage from 'store'
 import notification from 'ant-design-vue/es/notification'
 import { VueAxios } from './axios'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
+import { M_ACCESS_TOKEN } from '@/constant'
 
 // 创建 axios 实例
 const request = axios.create({
@@ -47,7 +48,7 @@ request.interceptors.request.use(config => {
   // 如果 token 存在
   // 让每个请求携带自定义 token 请根据实际情况自行修改
   if (token) {
-    config.headers['Access-Token'] = token
+    config.headers[M_ACCESS_TOKEN] = token
   }
   return config
 }, errorHandler)

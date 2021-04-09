@@ -23,8 +23,9 @@ export default {
   menu: {
     locale: true
   },
-  title: 'Ant Design Pro',
+  title: '医物通达',
   pwa: false,
   iconfontUrl: '',
-  production: process.env.NODE_ENV === 'production' && process.env.VUE_APP_PREVIEW !== 'true'
+  production: process.env.NODE_ENV === 'production' && process.env.VUE_APP_PREVIEW !== 'true',
+  supportMobile: false // 是否支持手机号登录
 }

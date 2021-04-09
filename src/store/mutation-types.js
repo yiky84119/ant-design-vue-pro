@@ -13,6 +13,14 @@ export const TOGGLE_WEAK = 'weak'
 export const TOGGLE_MULTI_TAB = 'multi_tab'
 export const APP_LANGUAGE = 'app_language'
 
+export const USER_NAME = 'Username'
+export const USER_INFO = 'Userinfo'
+
+export const USER_BUTTON_AUTH = 'UserButtonAuth'
+export const SYS_BUTTON_AUTH = 'SysButtonAuth'
+
+export const CACHE_DICT_DATA = 'Cache_Dict_Data'
+
 export const CONTENT_WIDTH_TYPE = {
   Fluid: 'Fluid',
   Fixed: 'Fixed'
